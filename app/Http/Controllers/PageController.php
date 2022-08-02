@@ -11,7 +11,8 @@ class PageController extends Controller
     public function index()
     {
         $homes = Home::withTranslations()->get();
-        $about = About::withTranslations()->get();
+        $about = About::withTranslations()->first();
+        
 
         return view('welcome', compact('homes', 'about'));
     }
